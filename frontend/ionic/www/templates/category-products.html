@@ -1,0 +1,9 @@
+<ion-view view-title="{{navBarHeader}}">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="product in products" ui-sref="Main.Product({productId:product.id})">
+                {{product.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
