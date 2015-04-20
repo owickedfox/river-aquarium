@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('RiverAquarium.Controllers').controller('ProductListController', function ($scope) {
+    $scope.navBarHeader = 'Products';
 
     $scope.products = [
         {

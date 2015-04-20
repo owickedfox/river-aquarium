@@ -1,0 +1,13 @@
+<ion-view view-title="{{navBarHeader}}">
+    <ion-content>
+        <ion-nav-buttons side="left">
+            <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+        </ion-nav-buttons>
+
+        <ion-list>
+            <ion-item ng-repeat="category in categoryList" ui-sref="Main.Category({categoryId: category.id})">
+                {{category.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

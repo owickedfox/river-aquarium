@@ -18,6 +18,42 @@ angular.module('RiverAquarium').config(function ($stateProvider, $urlRouterProvi
                 }
             }
         })
+        .state('Main.SignIn', {
+            url: '/account/signin',
+            views: {
+                'main': {
+                    templateUrl: 'templates/signin.html',
+                    controller: 'SignInController'
+                }
+            }
+        })
+        .state('Main.SignUp', {
+            url: '/account/signup',
+            views: {
+                'main': {
+                    templateUrl: 'templates/signup.html',
+                    controller: 'SignUpController'
+                }
+            }
+        })
+        .state('Main.Categories', {
+            url: '/categories',
+            views: {
+                'main': {
+                    templateUrl: 'templates/categoryList.html',
+                    controller: 'CategoryListController'
+                }
+            }
+        })
+        .state('Main.Category', {
+            url: '/categories/:categoryId',
+            views: {
+                'main': {
+                    templateUrl: 'templates/category.html',
+                    controller: 'CategoryController'
+                }
+            }
+        })
         .state('Main.CategoryProducts', {
             url: '/category-product/:categoryId',
             views: {
@@ -31,7 +67,7 @@ angular.module('RiverAquarium').config(function ($stateProvider, $urlRouterProvi
             url: '/products',
             views: {
                 'main': {
-                    templateUrl: 'templates/products.html',
+                    templateUrl: 'templates/product.html',
                     controller: 'ProductListController'
                 }
             }
