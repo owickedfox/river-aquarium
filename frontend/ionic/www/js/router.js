@@ -73,7 +73,7 @@ angular.module('RiverAquarium').config(function ($stateProvider, $urlRouterProvi
             }
         })
         .state('Main.Product', {
-            url: '/products/:productId',
+            url: '/products/:categoryId/:productId',
             views: {
                 'main': {
                     templateUrl: 'templates/product.html',

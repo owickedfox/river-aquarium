@@ -1,15 +1,15 @@
 <ion-view view-title="{{navBarHeader}}">
-   
+
     <ion-nav-buttons side="left">
         <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
     </ion-nav-buttons>
-    
-    <ion-content>
+
+    <ion-content padding="true">
         <ion-list>
-            <ion-item data-ng-repeat="product in products" ui-sref="Main.Product({productId:product.id})">
-                {{product.name}}
+            <ion-item data-ng-repeat="product in products" ui-sref="Main.Product({categoryId: product.categoryId, productId: product.id})">
+                <h3>{{product.name}}</h3>
             </ion-item>
         </ion-list>
     </ion-content>
-    
+
 </ion-view>
