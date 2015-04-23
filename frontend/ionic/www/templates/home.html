@@ -1,0 +1,32 @@
+<ion-view title="{{navBarHeader}}">
+
+    <!-- Left-Menu toggle button -->
+    <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon-round"></button>
+    </ion-nav-buttons>
+
+    <!-- Right-Menu toggle button -->
+    <ion-nav-buttons side="right">
+        <button menu-toggle="right" class="button button-icon icon ion-grid"></button>
+    </ion-nav-buttons>
+
+    <ion-content has-header="true" padding="true">
+
+        <h4>Your Online Shop - Aquarium Supplies, Aquarium Products, Aquarium Accessories for your Fish Tank</h4>
+
+    </ion-content>
+
+    <div class="tabs-striped tabs-color-balanced">
+        <div class="tabs tabs-icon-top">
+            <a nav-clear class="tab-item disable-user-behavior active" ui-sref="Main.Home">
+                <i class="icon ion-home"></i>Home
+            </a>
+            <a nav-clear class="tab-item disable-user-behavior" ui-sref="Main.News">
+                <i class="icon ion-star"></i>What's New
+            </a>
+            <a nav-clear class="tab-item disable-user-behavior" ui-sref="Main.Popular">
+                <i class="icon icon-heart"></i> Most Popular
+            </a>
+        </div>
+    </div>
+</ion-view>

@@ -3,6 +3,7 @@
 angular.module('RiverAquarium.Services').factory('$UserService', function () {
 
     var admin = {
+        
         username: 'riversun',
     };
 
@@ -10,6 +11,7 @@ angular.module('RiverAquarium.Services').factory('$UserService', function () {
 
         isAuthorized: false,
         userInfos: {
+            
             username: '',
             roles: [
                 'admin'
@@ -17,10 +19,10 @@ angular.module('RiverAquarium.Services').factory('$UserService', function () {
         },
 
         signin: function (form) {
-            debugger;
             
             this.isAuthorized = true;
             this.userInfos.username = form.username || 'riversun';
+            
             return admin;
         },
         signup: function () {

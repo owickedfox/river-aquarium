@@ -5,9 +5,23 @@
     </ion-nav-buttons>
 
     <ion-content padding="true">
-        <h3>{{product.name}}</h3>
-        <h5>was {{product.originalPrice}}</h5>
-        <h5>now {{product.price}}</h5>
+        <div class="list">
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Product Name</span>
+                <input type="text" placeholder="Product 1" data-ng-model="product.name">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Original Price</span>
+                <input type="number" placeholder="Original Price" data-ng-model="product.originalPrice">
+            </label>
+            <label class="item item-input item-stacked-label">
+                <span class="input-label">Price</span>
+                <input type="number" placeholder="Price" data-ng-model="product.price">
+            </label>
+            <label class="item item-input">
+                <textarea placeholder="Comments"></textarea>
+            </label>
+        </div>
     </ion-content>
 
 </ion-view>

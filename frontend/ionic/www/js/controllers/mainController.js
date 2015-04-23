@@ -1,28 +1,46 @@
 'use strict';
 
 angular.module('RiverAquarium.Controllers')
-    .controller('MainController', function ($scope, $state, $ionicSideMenuDelegate, $UserService, $CategoryService) {
+    .controller('MainController', function ($scope, $state, $ionicSideMenuDelegate, $ionicPopup, $UserService, $CategoryService) {
 
         $scope.categories = $CategoryService.all();
 
         $scope.searchText = '';
         $scope.acountMenuHeader = $UserService.userInfos.username || 'Signin';
+        $scope.notificationCount = 3;
 
         $scope.toggleLeft = function () {
+
             $ionicSideMenuDelegate.toggleLeft();
         };
 
         $scope.toggleRight = function () {
+
             $ionicSideMenuDelegate.toggleRight();
         };
 
         $scope.clearSearchText = function () {
+
             $scope.searchText = '';
         };
 
         $scope.doSignOut = function () {
 
-            $ionicSideMenuDelegate.toggleRight();
-            $state.go('Main.SignIn');
+            var confirmPopup = $ionicPopup.confirm({
+
+                title: 'Sign-out',
+                template: 'Signing off ' + $UserService.userInfos.username + '... Do you want to continue?'
+            });
+            confirmPopup.then(function (res) {
+
+                if (res) {
+
+                    $ionicSideMenuDelegate.toggleRight();
+                    $state.go('Main.SignIn');
+                } else {
+
+                    console.log('You are not sure');
+                }
+            });
         };
     });

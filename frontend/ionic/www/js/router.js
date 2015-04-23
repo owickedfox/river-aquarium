@@ -9,12 +9,28 @@ angular.module('RiverAquarium').config(function ($stateProvider, $urlRouterProvi
             abstract: true,
             controller: 'MainController'
         })
-        .state('Main.Dashboard', {
-            url: '/dashboard',
+        .state('Main.Home', {
+            url: '/home',
             views: {
                 'main': {
-                    templateUrl: 'templates/dashboard.html',
-                    controller: 'DashboardController'
+                    templateUrl: 'templates/home.html',
+                    controller: 'HomeController'
+                }
+            }
+        })
+        .state('Main.Popular', {
+            url: '/popular',
+            views: {
+                'main': {
+                    templateUrl: 'templates/popular.html'
+                }
+            }
+        })
+        .state('Main.News', {
+            url: '/whatsnew',
+            views: {
+                'main': {
+                    templateUrl: 'templates/news.html'
                 }
             }
         })
@@ -83,5 +99,5 @@ angular.module('RiverAquarium').config(function ($stateProvider, $urlRouterProvi
         });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/dashboard');
+    $urlRouterProvider.otherwise('/home');
 });

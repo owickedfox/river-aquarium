@@ -5,11 +5,14 @@
     </ion-nav-buttons>
 
     <ion-content padding="true">
-        <ion-list>
-            <ion-item data-ng-repeat="product in products" ui-sref="Main.Product({categoryId: product.categoryId, productId: product.id})">
-                <h3>{{product.name}}</h3>
-            </ion-item>
-        </ion-list>
+        <ion-refresher on-refresh="doRefresh()" pulling-text="Pull..." refreshing-text="Refreshing!" refreshing-icon="ion-loading-c">
+        </ion-refresher>
+        <div class="list">
+            <a class="item item-text-wrap item-button-right" data-ng-repeat="product in products" data-ng-click="goToProduct(product.categoryId, product.id)">
+                {{product.name}}
+                <button class="button button-clear icon ion-close-round" data-ng-click="doSignOut()"></button>
+            </a>
+        </div>
     </ion-content>
 
 </ion-view>

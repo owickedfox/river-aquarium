@@ -6,8 +6,8 @@ angular.module('RiverAquarium.Controllers')
         $scope.navBarHeader = 'Account';
 
         $scope.signin = {
-            username: '',
-            password: ''
+            username: 'riversun',
+            password: '123'
         };
 
         $scope.doSignIn = function () {

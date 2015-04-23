@@ -60,7 +60,9 @@ angular.module('RiverAquarium.Services').factory('$ProductService', function () 
 
     return {
         get: function (categoryId, productId) {
+            
             switch (categoryId) {
+                    
                 case '2':
                     return fishTankProducts[productId];
                 case '4':
@@ -70,12 +72,12 @@ angular.module('RiverAquarium.Services').factory('$ProductService', function () 
             }
         },
         getByCategoryId: function (categoryId) {
+            
             switch (categoryId) {
+                    
                 case '0':
-
                     break;
                 case '1':
-
                     break;
                 case '2':
                     return fishTankProducts;
