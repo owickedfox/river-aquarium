@@ -60,12 +60,18 @@
                 </a>
 
                 <div class="item item-divider">Admin</div>
+                
                 <a class="item item-icon-left" ui-sref="Main.Admin" data-ng-click="toggleRight()">
                     <i class="icon ion-settings"></i>Control Panel
                 </a>
+                
                 <a class="item item-icon-left" ui-sref="Main.Admin" data-ng-click="toggleRight()">
                     <i class="icon ion-clipboard"></i> Notifications
                     <span class="badge badge-assertive">{{notificationCount}}</span>
+                </a>
+                
+                <a class="item item-icon-left" ui-sref="Main.AccessDenied" data-ng-click="toggleRight()">
+                    <i class="icon ion-clipboard"></i> Test 405
                 </a>
             </div>
         </ion-content>

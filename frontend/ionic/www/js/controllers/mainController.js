@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('RiverAquarium.Controllers')
-    .controller('MainController', function ($scope, $state, $ionicSideMenuDelegate, $ionicPopup, $UserService, $CategoryService) {
+    .controller('MainController', function ($scope, $state, $ionicSideMenuDelegate, $ionicPopup, $UserService, $CategoryService, $IdentityService) {
 
         $scope.categories = $CategoryService.all();
 
@@ -31,11 +31,14 @@ angular.module('RiverAquarium.Controllers')
                 title: 'Sign-out',
                 template: 'Signing off ' + $UserService.userInfos.username + '... Do you want to continue?'
             });
-            confirmPopup.then(function (res) {
+            confirmPopup.then(function (popupResult) {
 
-                if (res) {
+                if (popupResult) {
 
                     $ionicSideMenuDelegate.toggleRight();
+                    
+                    $IdentityService.authenticate(null);
+                    
                     $state.go('Main.SignIn');
                 } else {
 
